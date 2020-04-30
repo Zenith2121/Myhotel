@@ -1,0 +1,23 @@
+{"data":[
+        {
+            "firstName":"Zenit",
+            "lastName":"Heriyanto"
+            
+        },
+        {
+            "firstName":"Arya",
+            "lastName":"Pratama"
+            
+        },
+		{
+			"kelas":"CCIT Student Class 4SC5",
+            "program":"Software Enginner",
+			"tempat":"Live in Indonesia,",
+			"aryatempat":"",
+			"zentempat":"Bogor",
+			"age":"Age 19 years old",
+			"email":"Email Address",
+			"emailz":"zenitharryan@gmail.com",
+			"emaily":"aryap9644@gmail.com"
+		}
+]}
