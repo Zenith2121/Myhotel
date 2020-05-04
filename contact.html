@@ -84,7 +84,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
                       <label for="name">Name</label>
                       <input type="text" id="name" name="name" class="form-control" ng-model="name" required>
-					  <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Please input your name</p>
+					  <p style="color:red;" ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Please input your name</p>
                     </div>
 					</div>
                   </div>
@@ -93,7 +93,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : userForm.number.$invalid && !userForm.number.$pristine }">
                       <label for="phone">Phone</label>
                       <input type="tel" id="phone" name="phone" class="form-control" ng-model="number" required  >
-					  <p ng-show="userForm.number.$invalid && !userForm.number.$pristine" class="help-block">Please input your phone number</p>
+					  <p style="color:red;" ng-show="userForm.number.$invalid && !userForm.number.$pristine" class="help-block">Please input your phone number</p>
                     </div>
 					</div>
                   </div>
@@ -102,7 +102,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
                       <label for="email">Email</label>
                       <input type="email" id="email" name="email" class="form-control" ng-model="email" required >
-					  <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Please input your email</p>
+					  <p style="color:red;" ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Please enter a valid email</p>
                     </div>
 					</div>
                   </div>
@@ -111,7 +111,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : userForm.message.$invalid && !userForm.message.$pristine }">
                       <label for="message">Write Message</label>
                       <textarea name="message" id="message" name="message" class="form-control " cols="30" rows="8" ng-model="message" required></textarea>
-					  <p ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Please write message</p>
+					  <p style="color:red;" ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Please write message</p>
                     </div>
 					</div>
                   </div>

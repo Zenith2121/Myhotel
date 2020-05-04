@@ -77,14 +77,16 @@
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Reservation Form</h2>
-                <form action="#" method="post" id="contactForm" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate="novalidate">
+                <form id="contactForm" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate="novalidate">
                   <div class="row">
                       <div class="col-sm-6 form-group">
-                          
+                          <div class="form-group" ng-class="{ 'has-error' : userForm.date.$invalid && !userForm.date.$pristine }">
                           <label for="">Check In</label>
                           <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input type='text' class="form-control" id='arrival_date'  />
+                            <input type='text' class="form-control" id='arrival_date' ng-model="date" required  />
+							<p style="color:red;" ng-show="userForm.date.$invalid && !userForm.date.$pristine" class="help-block">Please enter a date</p>
+							</div>
                           </div>
                       </div>
 
@@ -130,9 +132,9 @@
                   <div class="row">
                     <div class="col-md-12 form-group">
 					<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" class="form-control" required ng-model="email">
-					   <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Please input your email</p>
+                      <label for="email">Email</label>					  
+                      <input type="email" id="email" name="email" class="form-control" ng-model="email" required >
+					   <p style="color:red;" ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Please enter a valid email</p>
                     </div>
                     </div>
                   </div>
@@ -141,7 +143,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : userForm.message.$invalid && !userForm.message.$pristine }">
                       <label for="message">Write a Note</label>
                       <textarea name="message" id="message" class="form-control " cols="30" rows="8" ng-model="message" required></textarea>
-					  <p ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Please write message</p>
+					  <p style="color:red;" ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Please write message</p>
                     </div>
 					  <p class="mb-1">Note : Write your name in note</p>	
                     </div>
@@ -261,13 +263,14 @@
 
     </script>
 	<script>
+			var date = document.getElementById('arrival_date');
             var validationApp = angular.module('validationApp', []);
             // create angular controller
             validationApp.controller('mainController', function ($scope) {
             // function to submit the form after all validation has occurred
             $scope.submitForm = function (isValid) {
             // check to make sure the form is completely valid
-            if (isValid) {
+            if (date !="" && isValid) {
             alert('Thank you ');
 			window.location.reload();
             }else
