@@ -4,6 +4,7 @@
     <title>MyHotel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/iconH.png" type="image/icon type">
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
 
@@ -92,8 +93,9 @@
                     <div class="col-md-12 form-group">
 					<div class="form-group" ng-class="{ 'has-error' : userForm.number.$invalid && !userForm.number.$pristine }">
                       <label for="phone">Phone</label>
-                      <input type="tel" id="phone" name="phone" class="form-control" ng-model="number" required  >
-					  <p style="color:red;" ng-show="userForm.number.$invalid && !userForm.number.$pristine" class="help-block">Please input your phone number</p>
+                      <input type="tel" id="phone" name="number" class="form-control" ng-model="number"  ng-Model pattern="[0-9]+" required>
+					  <p class="mb-1" style="color:red;" ng-show="userForm.number.$invalid && !userForm.number.$pristine" class="help-block">Please enter your number </p>
+					  <p  style="color:red;"ng-show="userForm.number.$error.pattern" class="help-block">Please enter number only</p>
                     </div>
 					</div>
                   </div>
@@ -111,7 +113,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : userForm.message.$invalid && !userForm.message.$pristine }">
                       <label for="message">Write Message</label>
                       <textarea name="message" id="message" name="message" class="form-control " cols="30" rows="8" ng-model="message" required></textarea>
-					  <p style="color:red;" ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Please write message</p>
+					  <p style="color:red;" ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Please write a note</p>
                     </div>
 					</div>
                   </div>
